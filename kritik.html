@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Sekolah - Kritik dan Saran</title>
+    <link rel="Icon" type="jpeg" href="images/logo.png" />
+    <link rel="stylesheet" href="css/css.css" />
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <div id="section">
+          <div>
+            <img src="images/logo.png" alt="Logo Sekolah" />
+          </div>
+          <span
+            >SMK Bisa!!!<br /><br />Belajar teknologi untuk membangun
+            bangsa.</span
+          >
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="demokrasiku.html">Demokrasi Sekolah</a></li>
+            <li class="current"><a href="kritik.html">Kritik dan Saran</a></li>
+            <li><a href="struktur.html">Struktur Kelas</a></li>
+          </ul>
+        </nav>
+        <div class="particle" style="top: 10%; left: 20%"></div>
+        <div class="particle" style="top: 30%; left: 50%"></div>
+        <div class="particle" style="top: 70%; left: 80%"></div>
+      </div>
+      <div id="content">
+        <div>
+          <h3>Kritik dan Saran</h3>
+          <h2>Berikan Masukan Anda</h2>
+          <form action="proses.php" method="get">
+            <textarea
+              name="kritik"
+              rows="5"
+              cols="40"
+              placeholder="Tulis kritik dan saran Anda di sini..."
+            ></textarea>
+            <br />
+            <input type="submit" name="submit" value="KIRIM" />
+          </form>
+          <div>
+            <p>
+              Terima Kasih atas saran anda kami sangat menghargai kritik dan
+              saran anda
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <p>© 2025 SMK Bisa!!!</p>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

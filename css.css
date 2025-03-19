@@ -1,0 +1,249 @@
+body {
+  background: linear-gradient(135deg, #274f75, #1c3a57);
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  margin: 0;
+  min-width: 960px;
+}
+
+#header {
+  background: #1c3a57;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#header img {
+  width: 100px;
+  transition: transform 0.3s ease;
+}
+
+#header img:hover {
+  transform: scale(1.1);
+}
+
+#header ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+#header ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+#header ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#header ul li a:hover {
+  background: #274f75;
+  color: #fff;
+}
+
+#header ul li.current a {
+  background: #274f75;
+}
+
+#content {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+  width: 960px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#footer {
+  background: #1c3a57;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Animasi untuk form */
+form input,
+form textarea,
+form button {
+  transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  transform: scale(1.05);
+  border-color: #274f75;
+}
+
+form button:hover {
+  background: #274f75;
+  color: #fff;
+}
+
+#menu {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  background: rgba(28, 58, 87, 0.9);
+  border-radius: 5px;
+  padding: 10px;
+  display: none; /* Awalnya tersembunyi */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#menu li {
+  margin: 10px 0;
+}
+
+/* Tampilkan menu saat aktif */
+#menu.active {
+  display: block;
+}
+
+/* Animasi untuk transisi halaman */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animasi untuk judul */
+h2 {
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc, 0 0 30px #ff00cc;
+  }
+  100% {
+    text-shadow: 0 0 20px #3333ff, 0 0 30px #3333ff, 0 0 40px #3333ff;
+  }
+}
+
+/* Animasi untuk tombol */
+form input[type="submit"] {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background: linear-gradient(90deg, #3333ff, #ff00cc);
+  color: #fff;
+}
+
+/* Animasi untuk partikel */
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(20px);
+  }
+}
+
+/* CSS untuk animasi tab */
+#header ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#header ul li a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(39, 79, 117, 0.8), transparent);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+#header ul li a:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+#header ul li a:hover {
+  color: #fff;
+  background: linear-gradient(90deg, #1e90ff, #00bfff);
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.7);
+}
+
+/* CSS untuk Form Input Nama */
+#name-input-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+#name-input-container img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+#name-input-container p {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #1c3a57;
+}
+
+#name-input-container input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+#name-input-container button {
+  padding: 8px 12px;
+  background-color: #1c3a57;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

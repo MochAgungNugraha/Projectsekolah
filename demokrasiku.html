@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Sekolah - Demokrasi Sekolah</title>
+    <link rel="Icon" type="jpeg" href="images/logo.png" />
+    <link rel="stylesheet" href="css/css.css" />
+    <style>
+      
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc, 0 0 30px #ff00cc;
+        }
+        100% {
+          text-shadow: 0 0 20px #3333ff, 0 0 30px #3333ff, 0 0 40px #3333ff;
+        }
+      }
+
+      #footer {
+        background: rgba(28, 58, 87, 0.8);
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Animasi Formulir */
+      form input[type="text"],
+      form input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      form input[type="text"]:focus {
+        border-color: #ff00cc;
+        box-shadow: 0 0 10px #ff00cc;
+      }
+
+      form input[type="submit"] {
+        background: linear-gradient(90deg, #ff00cc, #3333ff);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      form input[type="submit"]:hover {
+        background: linear-gradient(90deg, #3333ff, #ff00cc);
+      }
+
+      /* Animasi Partikel */
+      .particle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: #fff;
+        border-radius: 50%;
+        opacity: 0.7;
+        animation: float 5s infinite ease-in-out;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) translateX(0);
+        }
+        50% {
+          transform: translateY(-20px) translateX(20px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <div id="section">
+          <div>
+            <img src="images/logo.png" alt="Logo Sekolah"/>
+          </div>
+          <span
+            >SMK Bisa!!!<br /><br />Belajar teknologi untuk membangun
+            bangsa.</span
+          >
+        </div>
+        <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li class="current">
+            <a href="demokrasiku.html">Demokrasi Sekolah</a>
+          </li>
+          <li><a href="kritik.html">Kritik dan Saran</a></li>
+          <li><a href="struktur.html">Struktur Kelas</a></li>
+        </ul>
+      </nav>
+        <div class="particle" style="top: 10%; left: 20%"></div>
+        <div class="particle" style="top: 30%; left: 50%"></div>
+        <div class="particle" style="top: 70%; left: 80%"></div>
+      </div>
+      <div id="content">
+        <div>
+          <h3>Suara Demokrasi</h3>
+          <h2>Pemilihan Ketua Kelas dan Pengurus Kelas</h2>
+          <p>FORM Pemilihan Ketua Kelas dan Pengurus Kelas</p>
+          <form id="pemilihanForm" action="proses.php" method="get">
+            <table>
+              <tr>
+                <td>Nama</td>
+                <td>::</td>
+                <td><input type="text" name="nama" required /></td>
+              </tr>
+              <tr>
+                <td>Ketua Kelas</td>
+                <td>::</td>
+                <td><input type="text" name="ketua" required /></td>
+              </tr>
+              <tr>
+                <td>Wakil Ketua Kelas</td>
+                <td>::</td>
+                <td><input type="text" name="wakil" required /></td>
+              </tr>
+              <tr>
+                <td>Sekretaris</td>
+                <td>::</td>
+                <td><input type="text" name="sekretaris" required /></td>
+              </tr>
+              <tr>
+                <td>Bendahara</td>
+                <td>::</td>
+                <td><input type="text" name="bendahara" required /></td>
+              </tr>
+            </table>
+            <br />
+            <input type="submit" name="submit" value="SIMPAN" />
+          </form>
+        </div>
+      </div>
+      <div id="footer">
+        <p>© 2023 SMK Bisa!!!</p>
+      </div>
+    </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+      // Animasi GSAP
+      gsap.from("#header", {
+        duration: 1.5,
+        y: -100,
+        opacity: 0,
+        ease: "power3.out",
+      });
+
+      gsap.from("#content", {
+        duration: 1.5,
+        y: 50,
+        opacity: 0,
+        delay: 0.5,
+        ease: "power3.out",
+      });
+
+      gsap.from("#footer", {
+        duration: 1.5,
+        y: 50,
+        opacity: 0,
+        delay: 1,
+        ease: "power3.out",
+      });
+
+      // Animasi Partikel
+      const particles = document.querySelectorAll(".particle");
+      particles.forEach((particle) => {
+        gsap.to(particle, {
+          duration: Math.random() * 3 + 2,
+          x: Math.random() * 200 - 100,
+          y: Math.random() * 200 - 100,
+          repeat: -1,
+          yoyo: true,
+          ease: "power1.inOut",
+        });
+      });
+
+      // Validasi Formulir
+      document
+        .getElementById("pemilihanForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          alert("Data berhasil dikirim!");
+          this.submit();
+        });
+    </script>
+  </body>
+</html>
